@@ -1,0 +1,180 @@
+@custom-variant dark (&:is(.dark *));
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --font-size: 14px;
+    --background: #0a0a0f;
+    --foreground: #f8f9fa;
+    --card: #1a1a2e;
+    --card-foreground: #f8f9fa;
+    --popover: #1a1a2e;
+    --popover-foreground: #f8f9fa;
+    --primary: #d4af37;
+    --primary-foreground: #0a0a0f;
+    --secondary: #2d1b69;
+    --secondary-foreground: #f8f9fa;
+    --muted: #16213e;
+    --muted-foreground: #8892b0;
+    --accent: #4c1d95;
+    --accent-foreground: #f8f9fa;
+    --destructive: #d4183d;
+    --destructive-foreground: #ffffff;
+    --border: rgba(212, 175, 55, 0.2);
+    --input: transparent;
+    --input-background: #16213e;
+    --switch-background: #cbced4;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --ring: #d4af37;
+    --chart-1: #d4af37;
+    --chart-2: #4c1d95;
+    --chart-3: #7c3aed;
+    --chart-4: #a855f7;
+    --chart-5: #c084fc;
+    --radius: 0.75rem;
+    --luxury-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    --purple-gradient: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
+}
+
+.dark {
+    --background: #0a0a0f;
+    --foreground: #f8f9fa;
+    --card: #1a1a2e;
+    --card-foreground: #f8f9fa;
+    --popover: #1a1a2e;
+    --popover-foreground: #f8f9fa;
+    --primary: #d4af37;
+    --primary-foreground: #0a0a0f;
+    --secondary: #2d1b69;
+    --secondary-foreground: #f8f9fa;
+    --muted: #16213e;
+    --muted-foreground: #8892b0;
+    --accent: #4c1d95;
+    --accent-foreground: #f8f9fa;
+    --destructive: #d4183d;
+    --destructive-foreground: #ffffff;
+    --border: rgba(212, 175, 55, 0.2);
+    --input: #16213e;
+    --ring: #d4af37;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-input-background: var(--input-background);
+    --color-switch-background: var(--switch-background);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .font-display {
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+@layer base {
+    :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.3;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.4;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        button {
+            font-size: 0.875rem;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        input {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+    }
+}
+
+html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+}
+
+.luxury-gradient {
+    background: var(--luxury-gradient);
+}
+
+.gold-gradient {
+    background: var(--gold-gradient);
+}
+
+.purple-gradient {
+    background: var(--purple-gradient);
+}
